@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Bootstrap CSS -->
+		<link rel ="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+
+		<!-- Bootstrap JS -->
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+
+		<!-- My JS -->
+		<script src="./main.js"></script>
+		
+		<!-- Font Awesome Icons -->
+		<script src="https://kit.fontawesome.com/996973c893.js"></script>
+		
+		<!-- Google font -->
+		<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+		<!-- <! -- My CSS --> 
+		<link rel ="stylesheet" href="style.css"/>
+	</head>
+
+	<body onload="template()" id="body">
+		<div class="container">
+			<h1 class="text-center my-5 heading" id="heading">My Pomodoro</h1>
+
+			<div id="award" class="container" style="height:15%; width:5%; position:absolute; top:5%; right:5%"></div>
+
+			<!-- Input Fields -->
+			<div class="d-flex justify-content-center align-items-center" style="display:flex; flex-direction:row; height:50px">
+				<button class="btn" onclick="forest_sound()"><i class="fas fa-tree fa-1.5x"></i></button>
+				<button class="btn" onclick="water_sound()"><i class="fas fa-tint fa-1.5x"></i></button>
+				<button class="btn" onclick="noise_sound()"><i class="fas fa-wave-square fa-1.5x"></i></button>
+				<br>
+			</div>
+
+			<div class="container">
+				<form>
+
+					<label for="input_minutes" class="small_text">Set Minutes: </label>
+					<input type="number" class="input_field" id="input_minutes" fname="input_minutes" value=25><br>
+
+					<label for="input_total" class="small_text">Goal Time (hours): </label>
+					<input type="number" class="input_field" id="input_total" fname="input_total" value=0>
+					
+					<h4 class="small_text" id="percent_total">Total Completed: 0%</h4>
+
+					<label for="input_sound" class="small_text">Sound On</label>
+					<input type="checkbox" class="input_field" id="input_sound" fname="input_sound" checked="checked">				
+
+				</form>
+
+				<div class="timer" id="timer">
+					<div class="row">
+						<div class="col-5">
+							<h4 id="minutes"></h4>
+						</div>
+						<div class="col-2">
+							<h4>:</h4>
+						</div>
+						<div class="col-5">
+							<h4 id="seconds"></h4>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			<!-- Main Timer -->
+
+
+			<!-- Buttons -->
+			<div class="container d-flex justify-content-center align-items-center my-5" id="buttons_container">
+				<button class="btn" onclick="start()"><i class="fas fa-play fa-2x" id="button1"></i></button>
+				<button class="btn" onclick="scheme()"><i class="fas fa-palette fa-2x" id="button2"></i></button>
+				<a href="index.html"><i class="fas fa-redo-alt fa-2x" id="button3"></i></a>
+
+			</div>
+
+			<!-- Session Completion Notice -->
+			<div>
+				<h3 id="done" class="text-center my-5" style="position:relative; bottom:80px"></h3>
+			</div>
+
+		</div>
+
+
+
+		<script src="./main.js"></script>
+
+
+
+	</body>
+
+</html>

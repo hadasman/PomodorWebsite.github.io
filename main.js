@@ -7,9 +7,11 @@ var clapping = new Audio("short_clapping.mp3");
 var forest = new Audio("forest_sound.mp3");
 var water = new Audio("water_sound.mp3");
 var noise = new Audio("white_noise_sound.mp3")
+var ocean = new Audio("ocean_sound.mp3")
 var forest_playing = 0;
 var water_playing = 0;
 var noise_playing = 0;
+var ocean_playing = 0;
 
 var color_scheme = 0;
 var num_color_schemes = 4;
@@ -150,6 +152,9 @@ function water_sound(){
 }
 function noise_sound(){
 	noise_playing = play_sound(noise, noise_playing)
+}
+function ocean_sound(){
+	ocean_playing = play_sound(ocean, ocean_playing)
 }
 
 // function noise_sound(){

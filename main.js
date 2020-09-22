@@ -78,7 +78,7 @@ function start(){
     				});
 
 					if (Notification.permission==="granted"){
-						var noti = new Notification("Session completed")
+						var noti = new Notification("Session completed", {body: `${(100*accumulated_time/(goal_time*60)).toFixed(2)} completed!`})
 					}
 
 					var goal_time = document.getElementById("input_total").value;

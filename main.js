@@ -69,6 +69,7 @@ function start(){
 						document.getElementById("percent_total").innerHTML = `Total Completed: 100%`
 					}else{
 						document.getElementById("percent_total").innerHTML = `Total Completed: ${(100*accumulated_time/(goal_time*60)).toFixed(2)}%`
+						document.querySelector("#progressbar").style.width = `${(100*accumulated_time/(goal_time*60)).toFixed(2)}%`
 					};
 
 					if ((100*accumulated_time/(goal_time*60))>=100){document.querySelector("#award").style.backgroundImage="url('award.png')"; document.querySelector("#award").style.backgroundSize='cover'}

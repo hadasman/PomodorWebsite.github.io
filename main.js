@@ -1,6 +1,6 @@
 Notification.requestPermission();
 
-var minutes = document.getElementById("input_minutes").value;
+var minutes = '25';
 var seconds = '00';
 var accumulated_time = 0;
 var isPaused = false;
@@ -73,13 +73,13 @@ function start(){
 					Notification.requestPermission().then(permission => {
     					if (permission==="granted"){
 		    				console.log(permission);
-		    				const notification = new Notification("Title", {body: "notification success"})
+		    				const notification = new Notification("Session completed", {body: `${(100*accumulated_time/(goal_time*60)).toFixed(2)} completed!`})
     					}
     				});
 
-					if (Notification.permission==="granted"){
-						var noti = new Notification("Session completed", {body: `${(100*accumulated_time/(goal_time*60)).toFixed(2)} completed!`})
-					}
+					// if (Notification.permission==="granted"){
+					// 	var noti = new Notification("Session completed", {body: `${(100*accumulated_time/(goal_time*60)).toFixed(2)} completed!`})
+					// }
 
 					var goal_time = document.getElementById("input_total").value;
 					

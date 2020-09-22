@@ -1,6 +1,7 @@
 var minutes = document.getElementById("input_minutes").value;
 var seconds = '00';
 var accumulated_time = 0;
+var isPaused = false;
 
 var beep = new Audio("beep.mp3");
 var clapping = new Audio("short_clapping.mp3");
@@ -38,40 +39,43 @@ function start(){
 	var seconds_interval = setInterval(secondsTimer, 1000);
 
 	function minutesTimer(){
-		minutes = minutes - 1;
-		document.getElementById("minutes").innerHTML = minutes;
+		if (!isPaused){
+			minutes = minutes - 1;
+
+			if (minutes<0){minutes = 0;}
+			document.getElementById("minutes").innerHTML = minutes;
+		}
 	}
 	function secondsTimer(){
-		seconds = seconds - 1;
-		document.getElementById("seconds").innerHTML = seconds;
+		if (!isPaused){
+			seconds = seconds - 1;
+			document.getElementById("seconds").innerHTML = seconds;
 
-		if (seconds==0){
-			
-			if (minutes==0){
-				minutes = 0;
-				clearInterval(minutes_interval); 
-				clearInterval(seconds_interval);
-
-				// I need "done" to be an id in order to use getElementById, and I need show_message to be a class (and not use styling for the id "done") in order for it not to be shown in the beginning
-				if (document.getElementById("input_sound").checked){clapping.play();}
-
-				document.getElementById("done").innerHTML = "Session Completed";
-				document.getElementById("done").classList.add("show_message");
-				var goal_time = document.getElementById("input_total").value;
+			if (seconds==0){
 				
-				if (goal_time==0){
-					document.getElementById("percent_total").innerHTML = `Total Completed: 100%`
-				}else{
-					document.getElementById("percent_total").innerHTML = `Total Completed: ${(100*accumulated_time/(goal_time*60)).toFixed(2)}%`
-				};
+				if (minutes==0){
+					minutes = 0;
+					clearInterval(minutes_interval); 
+					clearInterval(seconds_interval);
 
-				if ((100*accumulated_time/(goal_time*60))>=100){document.querySelector("#award").style.backgroundImage="url('award.png')"; document.querySelector("#award").style.backgroundSize='cover'}
-			}
-			seconds = 60;
-		};
-		
-		
+					// I need "done" to be an id in order to use getElementById, and I need show_message to be a class (and not use styling for the id "done") in order for it not to be shown in the beginning
+					if (document.getElementById("input_sound").checked){clapping.play();}
 
+					document.getElementById("done").innerHTML = "Session Completed";
+					document.getElementById("done").classList.add("show_message");
+					var goal_time = document.getElementById("input_total").value;
+					
+					if (goal_time==0){
+						document.getElementById("percent_total").innerHTML = `Total Completed: 100%`
+					}else{
+						document.getElementById("percent_total").innerHTML = `Total Completed: ${(100*accumulated_time/(goal_time*60)).toFixed(2)}%`
+					};
+
+					if ((100*accumulated_time/(goal_time*60))>=100){document.querySelector("#award").style.backgroundImage="url('award.png')"; document.querySelector("#award").style.backgroundSize='cover'}
+				}
+				seconds = 60;
+			};
+		}
 	}
 }
 
@@ -130,6 +134,10 @@ function scheme(){
 	  					$(this).css("color", button_color); 
 	  					$(this).css("border", "0px solid "+font_color)});
 	}
+}
+
+function change_isPaused(){
+	isPaused = false*(isPaused==true) + true*(isPaused==false)
 }
 
 function play_sound(audio_obj, is_playing){

@@ -74,10 +74,8 @@ function start(){
     					if (permission==="granted"){
 		    				console.log(permission);
 		    				const notification = new Notification("Title", {body: "notification success"})
-    			}
-    		});
-
-					})
+    					}
+    				});
 
 					if (Notification.permission==="granted"){
 						var noti = new Notification("Session completed")

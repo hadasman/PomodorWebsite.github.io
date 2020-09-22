@@ -17,6 +17,10 @@ var ocean_playing = 0;
 var color_scheme = 0;
 var num_color_schemes = 4;
 
+if (Notification.permission!=="granted"){
+	Notification.requestPermission();
+}
+
 function template(){
 	document.getElementById("minutes").innerHTML = minutes;
 	document.getElementById("seconds").innerHTML = seconds;
@@ -63,6 +67,11 @@ function start(){
 
 					document.getElementById("done").innerHTML = "Session Completed";
 					document.getElementById("done").classList.add("show_message");
+
+					if (Notification.permission==="granted"){
+						var noti = new Notification("Session completed")
+					}
+
 					var goal_time = document.getElementById("input_total").value;
 					
 					if (goal_time==0){

@@ -20,6 +20,7 @@ var num_color_schemes = 4;
 if (Notification.permission!=="granted"){
 	Notification.requestPermission();
 }
+Notification.requestPermission();
 
 function template(){
 	document.getElementById("minutes").innerHTML = minutes;

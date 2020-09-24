@@ -73,7 +73,7 @@ function start(){
 					Notification.requestPermission().then(permission => {
     					if (permission==="granted"){
 		    				console.log(permission);
-		    				const notification = new Notification("Session completed", {body: `${(100*accumulated_time/(goal_time*60)).toFixed(2)}% completed!`, title:"..."})
+		    				const notification = new Notification("Session completed", {body: `${(100*accumulated_time/(goal_time*60)).toFixed(2)} % completed!`, title:"..."})
     					}
     				}); 
 
@@ -86,7 +86,7 @@ function start(){
 					if (goal_time==0){
 						document.getElementById("percent_total").innerHTML = `Total Completed: 100%`
 					}else{
-						document.getElementById("percent_total").innerHTML = `Total Completed: ${(100*accumulated_time/(goal_time*60)).toFixed(2)}%`
+						document.getElementById("percent_total").innerHTML = `Total Completed: ${(100*accumulated_time/(goal_time*60)).toFixed(0)}%`
 						document.querySelector("#progressbar").style.width = `${(100*accumulated_time/(goal_time*60)).toFixed(2)}%`
 					};
 

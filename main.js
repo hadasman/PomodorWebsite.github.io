@@ -73,9 +73,9 @@ function start(){
 					Notification.requestPermission().then(permission => {
     					if (permission==="granted"){
 		    				console.log(permission);
-		    				const notification = new Notification("Session completed", {body: `${(100*accumulated_time/(goal_time*60)).toFixed(2)} completed!`})
+		    				const notification = new Notification("Session completed", {body: `${(100*accumulated_time/(goal_time*60)).toFixed(2)}% completed!`, title:" "})
     					}
-    				});
+    				}); 
 
 					// if (Notification.permission==="granted"){
 					// 	var noti = new Notification("Session completed", {body: `${(100*accumulated_time/(goal_time*60)).toFixed(2)} completed!`})

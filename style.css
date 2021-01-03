@@ -1,10 +1,11 @@
 /* Color Scheme 1*/
 :root {
-  --background_color: #272343;
-  --font_color: #bae8e8;
-  --border_color: #fff;
-  --button_color: #e3f6f5;
+  --background_color: #1C2340;
+  --font_color: #F0DAC5;
+  --border_color: #50223C;
+  --button_color: #AEF359;
 }
+
 
 /*Color Scheme 2*/
 /*:root {
@@ -51,7 +52,9 @@ body{
 	height: 20rem;
 	border: 5px solid var(--border_color);
 	border-radius: 10rem;
-
+/*	background: url(white_clock.png) no-repeat;
+	background-size: cover;
+*/
 	/*The next 3 lines make sure what is in the container is in the center*/
 	display: flex;
 	justify-content: center;

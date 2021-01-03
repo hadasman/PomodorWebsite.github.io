@@ -105,28 +105,29 @@ function scheme(){
 
 	switch (color_scheme) {
 		case 0:
-			var background_color = "#272343";
-			var font_color = "#bae8e8";
-			var border_color = "#fff";
-			var button_color = "#e3f6f5";
+			var background_color = "#1C2340"//"#dddddd";
+			var font_color = "#F0DAC5"//"#3e978b";
+			var border_color =  "#50223C"//"#d9adad";
+			var button_color = "#AEF359"//"#89c9b8";		
 			break;
 		case 1:
-			var background_color = "#8fcfd1";
-			var font_color =  "#df5e88";
-			var border_color = "#f6ab6c";
-			var button_color = "#f6efa6";
+			var background_color = "#FFFFFF";
+			var font_color =  "#6593F6";
+			var border_color = "#3FE0D0";
+			var button_color = "#6593F6";
 			break;
 		case 2:
-			var background_color = "#F08A5D";
-			var font_color = "#7D0633";
-			var border_color = "#EDCFA9";
-			var button_color = "#6A2C70";
+			var background_color = "#f5f1e4";
+			var font_color = "#F87B7B";
+			var border_color = "#B1D7D8";
+			var button_color = "#f3a5a2";
 			break;
 		case 3:
-			var background_color = "#ffe4e4"//"#dddddd";
-			var font_color = "#be5683"//"#3e978b";
-			var border_color =  "#93b5e1"//"#d9adad";
-			var button_color = "#848ccf"//"#89c9b8";
+			var background_color = "#000000"; //"#272343"
+			var font_color = "#46CB18";//"#bae8e8";
+			var border_color = "#fff";
+			var button_color = "#46CB18";//"#e3f6f5";
+
 			break;
 	}
 

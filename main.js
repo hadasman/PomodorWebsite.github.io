@@ -133,6 +133,7 @@ function scheme(){
 
 	document.querySelector("#body").style.background 	= background_color;
 	document.querySelector("#heading").style.color 		= font_color;
+	document.querySelector("#explanation").style.color 		= font_color;
 	document.querySelector("#timer").style.color 		= font_color;
 	document.querySelector(".timer").style.border 		= `5px solid ${border_color}`;
 

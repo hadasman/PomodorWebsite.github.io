@@ -108,3 +108,8 @@ body{
 	position: relative;
 	top: -140px;
 }
+
+#explanation{
+	color: var(--font_color);
+	font-family: 'Times New Roman'
+}

@@ -111,5 +111,6 @@ body{
 
 #explanation{
 	color: var(--font_color);
-	font-family: 'Times New Roman'
+	font-family: 'Times New Roman';
+	color: var(--font_color);
 }
